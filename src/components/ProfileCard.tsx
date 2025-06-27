@@ -9,6 +9,7 @@ interface ProfileCardProps {
   avatar: string;
   interests: string[];
   isOnline?: boolean;
+  onStartChat: () => void;
 }
 
 const ProfileCard = ({
@@ -18,6 +19,7 @@ const ProfileCard = ({
   avatar,
   interests,
   isOnline = true,
+  onStartChat,
 }: ProfileCardProps) => {
   return (
     <Card className="group hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-card to-romantic-pink/20 border-0 shadow-lg">
@@ -59,11 +61,13 @@ const ProfileCard = ({
 
         <div className="flex gap-2">
           <Button
+            onClick={onStartChat}
             className="flex-1 bg-gradient-to-r from-primary to-romantic-purple hover:opacity-90 transition-all"
             size="sm"
+            disabled={!isOnline}
           >
             <Icon name="MessageCircle" size={16} className="mr-1" />
-            Чат
+            {isOnline ? "Начать чат" : "Оффлайн"}
           </Button>
 
           <Button

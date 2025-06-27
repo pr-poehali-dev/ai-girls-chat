@@ -1,12 +1,20 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
-const Header = () => {
+interface HeaderProps {
+  currentSection: string;
+  onSectionChange: (section: "home" | "profiles" | "anime" | "chat") => void;
+}
+
+const Header = ({ currentSection, onSectionChange }: HeaderProps) => {
   return (
     <header className="fixed top-0 w-full z-50 glass-effect">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => onSectionChange("home")}
+          >
             <div className="w-8 h-8 bg-gradient-to-r from-primary to-romantic-purple rounded-full flex items-center justify-center">
               <Icon name="Heart" size={18} className="text-white" />
             </div>
@@ -16,30 +24,36 @@ const Header = () => {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-foreground hover:text-primary transition-colors font-medium"
+            <button
+              onClick={() => onSectionChange("home")}
+              className={`font-medium transition-colors ${
+                currentSection === "home"
+                  ? "text-primary"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               Главная
-            </a>
-            <a
-              href="#profiles"
-              className="text-foreground hover:text-primary transition-colors font-medium"
+            </button>
+            <button
+              onClick={() => onSectionChange("profiles")}
+              className={`font-medium transition-colors ${
+                currentSection === "profiles"
+                  ? "text-primary"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
-              Профили
-            </a>
-            <a
-              href="#chats"
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              AI Подружки
+            </button>
+            <button
+              onClick={() => onSectionChange("anime")}
+              className={`font-medium transition-colors ${
+                currentSection === "anime"
+                  ? "text-primary"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
-              Чаты
-            </a>
-            <a
-              href="#settings"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Настройки
-            </a>
+              🌸 Аниме девушки
+            </button>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -47,7 +61,7 @@ const Header = () => {
               <Icon name="Menu" size={20} />
             </Button>
             <Button className="bg-gradient-to-r from-primary to-romantic-purple hover:opacity-90 transition-all">
-              Войти
+              💕 Войти
             </Button>
           </div>
         </div>

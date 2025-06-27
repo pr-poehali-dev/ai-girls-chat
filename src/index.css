@@ -2,71 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @layer base {
   :root {
-    --background: 355 100% 97%;
-    --foreground: 340 20% 15%;
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 355 50% 98%;
-    --card-foreground: 340 20% 15%;
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 355 50% 98%;
-    --popover-foreground: 340 20% 15%;
+    --popover: 222 84% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 355 100% 97%;
+    --primary: 316 100% 60%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 315 100% 94%;
-    --secondary-foreground: 340 30% 25%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 315 50% 96%;
-    --muted-foreground: 340 20% 50%;
+    --muted: 217 32% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 280 100% 93%;
-    --accent-foreground: 340 30% 25%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 315 30% 90%;
-    --input: 315 30% 92%;
-    --ring: 262 83% 58%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 316 100% 60%;
 
     --radius: 0.75rem;
 
-    --romantic-pink: 330 100% 92%;
-    --romantic-purple: 280 100% 93%;
-    --romantic-cream: 45 100% 90%;
-    --romantic-lavender: 262 50% 85%;
-  }
-
-  .dark {
-    --background: 340 30% 8%;
-    --foreground: 355 100% 95%;
-
-    --card: 340 25% 10%;
-    --card-foreground: 355 100% 95%;
-
-    --popover: 340 25% 10%;
-    --popover-foreground: 355 100% 95%;
-
-    --primary: 262 83% 65%;
-    --primary-foreground: 340 30% 8%;
-
-    --secondary: 315 25% 15%;
-    --secondary-foreground: 355 100% 95%;
-
-    --muted: 315 25% 12%;
-    --muted-foreground: 340 20% 70%;
-
-    --accent: 280 25% 15%;
-    --accent-foreground: 355 100% 95%;
-
-    --border: 315 25% 20%;
-    --input: 315 25% 18%;
-    --ring: 262 83% 65%;
+    --chat-primary: 316 100% 60%;
+    --chat-secondary: 262 100% 65%;
+    --online-green: 142 76% 36%;
   }
 }
 
@@ -76,8 +48,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: "Open Sans", sans-serif;
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
   }
 
   h1,
@@ -86,23 +58,22 @@
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
 @layer utilities {
-  .romantic-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--romantic-pink)) 0%,
-      hsl(var(--romantic-purple)) 50%,
-      hsl(var(--romantic-cream)) 100%
-    );
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    background: rgba(34, 32, 52, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .glass-effect {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  .gradient-primary {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--chat-primary)) 0%,
+      hsl(var(--chat-secondary)) 100%
+    );
   }
 }

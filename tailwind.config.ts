@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
-        sans: ["Open Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +61,13 @@ export default {
           purple: "hsl(var(--romantic-purple))",
           cream: "hsl(var(--romantic-cream))",
           lavender: "hsl(var(--romantic-lavender))",
+        },
+        chat: {
+          primary: "hsl(var(--chat-primary))",
+          secondary: "hsl(var(--chat-secondary))",
+        },
+        online: {
+          green: "hsl(var(--online-green))",
         },
       },
       borderRadius: {
